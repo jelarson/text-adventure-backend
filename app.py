@@ -30,17 +30,17 @@ class Adventure(db.Model):
     family = db.Column(db.String(10), nullable=False)
     points = db.Column(db.String(10), nullable=False)
     security = db.Column(db.String(10), nullable=False)
-    description = db.Column(db.String(2000), nullable=False)
+    description = db.Column(db.String(2500), nullable=False)
     buttonOneName = db.Column(db.String(100), nullable=False)
     buttonTwoName = db.Column(db.String(100), nullable=False)
     buttonOnePath = db.Column(db.String(100), nullable=False)
     buttonTwoPath = db.Column(db.String(100), nullable=False)
-    resultOne = db.Column(db.String(2000), nullable=False)
-    resultTwo = db.Column(db.String(2000), nullable=False)
+    resultOne = db.Column(db.String(2500), nullable=False)
+    resultTwo = db.Column(db.String(2500), nullable=False)
     resultPath = db.Column(db.String(10), nullable=False)
     # adventurePath = db.Column(db.String(10), nullable=False)
 
-    def __init__(self, char, imageWithChar, imageWithoutChar):
+    def __init__(self, health, family, points, security, description, buttonOneName, buttonTwoName, buttonOnePath, buttonTwoPath, resultOne, resultTwo, resultPath):
         self.health = health
         self.family = family
         self.points = points
