@@ -220,7 +220,7 @@ def get_result(id):
 def update_result(id):
     result = Result.query.get(id)
 
-    new_health = request.json['inventory']
+    new_health = request.json['health']
     new_family = request.json['family']
     new_points = request.json['points']
     new_security = request.json['security']
