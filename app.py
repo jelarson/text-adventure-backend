@@ -74,7 +74,7 @@ class Result(db.Model):
     family = db.Column(db.String(10), nullable=False)
     points = db.Column(db.String(10), nullable=False)
     security = db.Column(db.String(10), nullable=False)
-    result = db.Column(db.String(2500), nullable=False)
+    resultDesc = db.Column(db.String(2500), nullable=False)
     resultPath = db.Column(db.String(10), nullable=False)
 
 def __init__(self, health, family, points, security, result, resultPath):
@@ -82,12 +82,12 @@ def __init__(self, health, family, points, security, result, resultPath):
         self.family = family
         self.points = points
         self.security = security
-        self.result = result
+        self.resultDesc = resultDesc
         self.resultPath = resultPath
 
 class ResultSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'health', 'family', 'points', 'security', 'result', 'resultPath')
+        fields = ('id', 'health', 'family', 'points', 'security', 'resultDesc', 'resultPath')
 
 
 result_schema = ResultSchema()
@@ -190,11 +190,11 @@ def add_result():
     family = request.json['family']
     points = request.json['points']
     security = request.json['security']
-    result = request.json['result']
+    resultDesc = request.json['resultDesc']
     resultPath = request.json['resultPath']
 
 
-    new_result = Result(health, family, points, security, result, resultPath)
+    new_result = Result(health, family, points, security, resultDesc, resultPath)
 
     db.session.add(new_result)
     db.session.commit()
@@ -224,14 +224,14 @@ def update_result(id):
     new_family = request.json['family']
     new_points = request.json['points']
     new_security = request.json['security']
-    new_result = request.json['result']
+    new_resultDesc = request.json['resultDesc']
     new_resultPath = request.json['resultPath']
 
     result.health = new_health
     result.family = new_family
     result.points = new_points
     result.security = new_security
-    result.result = new_result
+    result.resultDesc = new_resultDesc
     result.resultPath = new_resultPath
 
 
