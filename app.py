@@ -77,7 +77,7 @@ class Result(db.Model):
     resultDesc = db.Column(db.String(2500), nullable=False)
     resultPath = db.Column(db.String(10), nullable=False)
 
-def __init__(self, health, family, points, security, result, resultPath):
+def __init__(self, health, family, points, security, resultDesc, resultPath):
         self.health = health
         self.family = family
         self.points = points
