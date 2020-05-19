@@ -9,7 +9,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 heroku = Heroku(app)
- 
+
 env = Env()
 env.read_env()
 DATABASE_URL = env("DATABASE_URL")
