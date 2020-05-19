@@ -199,8 +199,8 @@ def add_result():
     db.session.add(new_result)
     db.session.commit()
 
-    result = Result.query.get(new_result.id)
-    return result_schema.jsonify(result)
+    result1 = Result.query.get(new_result.id)
+    return result_schema.jsonify(result1)
 
 @app.route('/results', methods=["GET"])
 def get_results():
